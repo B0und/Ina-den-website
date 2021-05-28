@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;800&display=swap");
+
+:root {
+  --secondary-black-clr: #1a1a1a;
+  --p-main-clr: #4b5563;
+  --accent-clr: #49959b;
+  --primary-clr: #b2384c;
+  --secondary-clr: #53aaaf;
+  --main-ff: "Mulish", sans-serif;
+  --gradient-start-clr: #fdba8c;
+  --gradient-end-clr: #047481;
+  --darker-gradient-start-clr: #ff934a;
+  --card-text--clr: #c7c7c7;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li,
+a,
+button {
+  text-decoration: none;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  font-family: var(--main-ff);
+  width: 100%;
+  display: flex;
+  background: linear-gradient(
+    180deg,
+    var(--gradient-start-clr) 0 30%,
+    var(--gradient-end-clr) 45% 100%
+  );
+  background-repeat: no-repeat;
+}
+
+img {
+  max-width: 100%;
+}
+
+#gradient-container {
+  max-width: min(90%, 1200px);
+  text-align: left;
+  margin: 0 auto;
+}
+
+/* Navbar */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links a {
+  display: block;
+  padding: 0px 1.25rem;
+}
+
+.nav__links li a {
+  transition: all 0.3s ease 0s;
+  color: black;
+}
+
+.nav__links li a:hover,
+.nav__links li a:focus {
+  color: var(--hover-clr);
+}
+
+.hamburger {
+  display: none;
+  padding: 1rem 1rem;
+  border-radius: 0;
+  background-image: url("assets/menu.svg");
+  background-repeat: no-repeat;
+  background-color: inherit;
+  background-size: contain;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 767px) {
+  /* hide old nav, show hamburger */
+  nav {
+    padding: 2rem 10%;
+    /* padding-top: 1rem; */
+  }
+  .nav__links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .show li {
+    width: 100%;
+  }
+  .nav__links a {
+    display: block;
+    padding: 1.5rem 0;
+    /* width: 100%; */
+    text-align: center;
+  }
+
+  .hamburger {
+    display: inline-block;
+  }
+
+  .show {
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* hero section */
+
+.hero-section {
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero-section > * {
+  width: 100%;
+}
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  /* max-width: 20rem; */
+}
+.hero-section h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 3.5rem;
+}
+
+.hero-section h2 {
+  font-size: 1.1rem;
+  font-weight: 300;
+  /* match to the beginning of h1 */
+  margin-left: 5px;
+}
+
+.hero-section p {
+  margin: 2rem 0;
+  /* match to the beginning of h1 */
+  margin-left: 4px;
+  line-height: 1.5;
+  color: var(--p-main-clr);
+  max-width: 35ch;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: var(--accent-clr);
+}
+.btn-primary {
+  background-color: var(--primary-clr);
+}
+
+.hero-section img {
+  border-radius: 17px;
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Portfolio section */
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  position: relative;
+  border-radius: 30px;
+  box-shadow: 10px 15px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.795);
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--card-text--clr);
+}
+
+.portfolio h2 {
+  margin: 4rem 0;
+  color: white;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.card img {
+  border-radius: 30px;
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}

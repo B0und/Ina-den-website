@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ina-Den`s website</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="gradient-container">
+      <!-- Navbar -->
+      <nav class="nav" id="nav">
+        <button class="hamburger" id="hamburger" type="button"></button>
+        <ul class="nav__links" id="nav__links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Commissions</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hero section -->
+      <section class="hero-section">
+        <div class="hero-wrapper">
+          <h1>Ina-Den</h1>
+          <h2>Traditional and Digital Artist</h2>
+
+          <p>
+            I am a very cool dude and this is a short description of who I am
+            and what I do. And why Japan is so cool.
+          </p>
+          <div class="btn-container">
+            <button class="btn btn-secondary">My works</button>
+            <button class="btn btn-primary">Contact me</button>
+          </div>
+
+          <img src="assets/hero.jpg" alt="Cute anime girl" />
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section class="portfolio">
+        <h2>Portfolio</h2>
+        <div class="card-wrapper">
+          <div class="card">
+            <img src="assets/anime1.jpg" alt="" />
+            <div class="card-text">Anime Style</div>
+          </div>
+          <div class="card">
+            <img src="assets/line1.jpg" alt="" />
+            <div class="card-text">Line Art</div>
+          </div>
+          <div class="card">
+            <img src="assets/paint1.jpg" alt="" />
+            <div class="card-text">Paintings</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- todo make footer -->
+      <footer></footer>
+    </div>
+  </body>
+
+  <!-- navbar script -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("nav__links");
+    const buttons = document.getElementById("buttons-container");
+
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  </script>
+</html>
