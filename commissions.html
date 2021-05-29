@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ina-Den`s website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="commissions.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <!-- navbar load script -->
+    <script>
+      $(function () {
+        $("#nav").load("nav.html");
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="nav" id="nav"></nav>
+    <h2>Commissions</h2>
+  </body>
+
+  <!-- navbar show script -->
+  <script>
+    $(function () {
+      $("#nav").click(function () {
+        $("#nav__links").toggleClass("show");
+      });
+    });
+  </script>
+</html>

@@ -7,7 +7,8 @@
   --primary-clr: #b2384c;
   --secondary-clr: #53aaaf;
   --main-ff: "Mulish", sans-serif;
-  --gradient-start-clr: #fdba8c;
+  /* --gradient-start-clr: #fdba8c; */
+  --gradient-start-clr: #fccfb1;
   --gradient-end-clr: #047481;
   --darker-gradient-start-clr: #ff934a;
   --card-text--clr: #c7c7c7;
@@ -32,9 +33,13 @@ button {
 }
 
 body {
+  display: block;
   font-family: var(--main-ff);
-  width: 100%;
-  display: flex;
+  max-width: min(90%, 950px);
+  min-width: 387px;
+  min-height: 100vh;
+  margin: 0 auto;
+  /* display: flex; */
   background: linear-gradient(
     180deg,
     var(--gradient-start-clr) 0 50vh,
@@ -45,12 +50,6 @@ body {
 
 img {
   max-width: 100%;
-}
-
-#gradient-container {
-  max-width: min(90%, 1200px);
-  text-align: left;
-  margin: 0 auto;
 }
 
 /* Navbar */
@@ -235,10 +234,10 @@ nav {
   margin: 0 2rem;
   text-align: center;
 }
-
+/* 
 .portfolio > * {
   width: 100%;
-}
+} */
 
 .card-wrapper {
   display: flex;
@@ -256,8 +255,11 @@ nav {
   box-shadow: 10px 15px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 4px 6px -2px rgba(0, 0, 0, 0.05);
   flex: 1 1 0px;
-  min-width: min(300px, 100%);
-  max-width: min(300px, 33%);
+  /* min-width: min(300px, 100%);
+  max-width: min(300px, 33%); */
+
+  min-width: 300px;
+  max-width: 350px;
 
   /* min-width: 300px; */
 }
@@ -294,6 +296,10 @@ nav {
 }
 
 @media screen and (min-width: 769px) {
+  .card {
+    min-width: 250px;
+    max-width: 250px;
+  }
   .card-text {
     visibility: hidden;
     opacity: 0;

@@ -14,35 +14,47 @@
         $("#nav").load("nav.html");
       });
     </script>
-
   </head>
   <body>
-    <div id="gradient-container">
-      <!-- Navbar -->
-      <nav class="nav" id="nav"></nav>
+    <!-- Navbar -->
+    <nav class="nav" id="nav"></nav>
 
-      <!-- Hero section -->
-      <section class="hero-section">
-        <div class="hero-wrapper">
-          <h1>Ina-Den</h1>
-          <h2>Traditional and Digital Artist</h2>
+    <!-- Hero section -->
+    <section class="hero-section">
+      <div class="hero-wrapper">
+        <h1>Ina-Den</h1>
+        <h2>Traditional and Digital Artist</h2>
 
-          <p>
-            I am a very cool dude and this is a short description of who I am
-            and what I do. And why Japan is so cool.
-          </p>
-          <div class="btn-container">
-            <button class="btn btn-secondary">My works</button>
-            <button class="btn btn-primary">Contact me</button>
-          </div>
+        <p>
+          I am a very cool dude and this is a short description of who I am and
+          what I do. And why Japan is so cool.
+        </p>
+        <div class="btn-container">
+          <button
+            class="btn btn-secondary"
+            onclick="location.href='gallery.html'"
+            type="button"
+          >
+            My works
+          </button>
+
+          <button
+            class="btn btn-primary"
+            onclick="location.href='contact.html'"
+            type="button"
+          >
+            Contact me
+          </button>
         </div>
+      </div>
 
-        <img src="assets/hero.jpg" alt="Cute anime girl" />
-      </section>
+      <img src="assets/hero.jpg" alt="Cute anime girl" />
+    </section>
 
-      <!-- Portfolio Section -->
-      <section class="portfolio">
-        <h2>Portfolio</h2>
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+      <h2>Portfolio</h2>
+      <a href="gallery.html">
         <div class="card-wrapper">
           <div class="card">
             <img src="assets/anime1.jpg" alt="" />
@@ -69,11 +81,11 @@
             <div class="card-text">Paintings</div>
           </div>
         </div>
-      </section>
+      </a>
+    </section>
 
-      <!-- todo make footer -->
-      <footer></footer>
-    </div>
+    <!-- todo make footer -->
+    <footer></footer>
   </body>
 
   <!-- navbar show script -->

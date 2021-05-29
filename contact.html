@@ -8,6 +8,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="contact.css" />
     <!-- navbar load script -->
     <script>
       $(function () {
@@ -16,17 +17,36 @@
     </script>
   </head>
   <body>
-    <div id="gradient-container">
+    <!-- <div id="gradient-container"> -->
       <!-- Navbar -->
       <nav class="nav" id="nav"></nav>
 
       <!-- Main content -->
-      <section class="contact">
-        <h2>Get in touch!</h2>
-        <p>some text</p>
-        <button>a button</button>
-      </section>
-    </div>
+
+      <form
+        class="contact"
+        action="https://app.99inbound.com/api/e/123456"
+        method="POST"
+        target="_blank"
+      >
+        <h2>Get in touch</h2>
+        <label for="name">Name</label>
+        <input type="text" id="name-input" name="name" placeholder="John" />
+
+        <label for="subject">Subject</label>
+        <input
+          type="text"
+          id="subject-input"
+          name="subject"
+          placeholder="Comission"
+        />
+
+        <label for="message">Message</label>
+        <textarea id="message-input" name="message" placeholder="Text"></textarea>
+
+        <input class="btn btn-primary" type="submit" value="Submit" />
+      </form>
+    <!-- </div> -->
   </body>
 
   <!-- navbar show script -->
