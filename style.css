@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;800&display=swap");
 
 :root {
-  --secondary-black-clr: #1a1a1a;
+  --secondary-black-clr: #5a5a5a;
   --p-main-clr: #4b5563;
   --accent-clr: #49959b;
   --primary-clr: #b2384c;
@@ -87,7 +87,7 @@ nav {
   display: none;
   padding: 1rem 1rem;
   border-radius: 0;
-  background-image: url("assets/menu.svg");
+  mask: url("assets/menu.svg");
   background-repeat: no-repeat;
   background-color: inherit;
   background-size: contain;
@@ -119,6 +119,8 @@ nav {
 
   .hamburger {
     display: inline-block;
+    background: var(--secondary-black-clr);
+    mask-size: cover;
   }
 
   .show {

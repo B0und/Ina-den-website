@@ -11,6 +11,10 @@ body {
   font-weight: 300;
 }
 
+#hamburger {
+  background: rgb(185, 185, 185);
+}
+
 body h1 {
   align-self: flex-start;
   font-size: clamp(2rem, 9vw, 3rem);

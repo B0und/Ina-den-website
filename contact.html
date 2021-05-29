@@ -7,6 +7,8 @@
     <title>Ina-Den`s website</title>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="jquery.captcha.basic.min.js"></script>
+
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="contact.css" />
     <!-- navbar load script -->
@@ -15,37 +17,51 @@
         $("#nav").load("nav.html");
       });
     </script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#contact-form").captcha();
+      });
+    </script>
   </head>
   <body>
     <!-- <div id="gradient-container"> -->
-      <!-- Navbar -->
-      <nav class="nav" id="nav"></nav>
+    <!-- Navbar -->
+    <nav class="nav" id="nav"></nav>
 
-      <!-- Main content -->
+    <!-- Main content -->
 
-      <form
-        class="contact"
-        action="https://app.99inbound.com/api/e/123456"
-        method="POST"
-        target="_blank"
-      >
-        <h2>Get in touch</h2>
-        <label for="name">Name</label>
-        <input type="text" id="name-input" name="name" placeholder="John" />
+    <form
+      class="contact"
+      action="https://app.99inbound.com/api/e/123456"
+      method="POST"
+      target="_blank"
+      id="contact-form"
+    >
+      <h2>Get in touch</h2>
+      <label for="name-input">Name</label>
+      <input
+        type="text"
+        id="name-input"
+        name="name"
+        placeholder="John"
+        required
+      />
 
-        <label for="subject">Subject</label>
-        <input
-          type="text"
-          id="subject-input"
-          name="subject"
-          placeholder="Comission"
-        />
+      <label for="subject-input">Subject</label>
+      <input
+        type="text"
+        id="subject-input"
+        name="subject"
+        placeholder="Comission"
+        required
+      />
 
-        <label for="message">Message</label>
-        <textarea id="message-input" name="message" placeholder="Text"></textarea>
+      <label for="message-input">Message</label>
+      <textarea id="message-input" name="message" placeholder="Text"></textarea>
 
-        <input class="btn btn-primary" type="submit" value="Submit" />
-      </form>
+      <input class="btn btn-primary" type="submit" value="Submit" />
+    </form>
     <!-- </div> -->
   </body>
 
