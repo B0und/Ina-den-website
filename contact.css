@@ -5,11 +5,9 @@ body {
   align-items: center;
 }
 
-.nav {
-  align-self: flex-end;
-}
 
 .contact {
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
 
@@ -18,6 +16,7 @@ body {
 
 .contact h2 {
   font-size: clamp(2rem, 9vw, 3rem);
+  font-weight: 300;
 }
 
 #name-input {

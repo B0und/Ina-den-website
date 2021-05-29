@@ -1,11 +1,69 @@
+root {
+  --comm-card-bg: #ffffff;
+}
+
 body {
   background: var(--gradient-end-clr);
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center; */
+  align-items: center;
+  color: black;
+  font-weight: 300;
+}
+
+body h1 {
+  align-self: flex-start;
+  font-size: clamp(2rem, 9vw, 3rem);
+  margin: 1rem 0;
+  font-weight: 300;
   color: white;
 }
 
+body h2 {
+  align-self: flex-start;
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-weight: 300;
+  color: white;
+}
+
+body p {
+  color: white;
+}
 .nav__links li a {
   color: white;
+}
+
+.card-wrapper {
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  text-align: center;
+  background-color: #98ead3;
+}
+
+.card h3 {
+  padding: 0.5rem 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.card p {
+  padding-bottom: 0.5rem;
+  /* font-weight: 400; */
+  font-size: 1.2rem;
+  color: black;
+}
+
+@media screen and (min-width: 769px) {
+  .card {
+    min-width: 200px;
+    max-width: 200px;
+  }
+}
+
+.btn {
+  margin: 2rem 0;
 }
