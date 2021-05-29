@@ -38,7 +38,7 @@ body {
   background: linear-gradient(
     180deg,
     var(--gradient-start-clr) 0 50vh,
-    var(--gradient-end-clr) 75vh 100vh
+    var(--gradient-end-clr) 80vh 100vh
   );
   background-repeat: no-repeat;
 }
