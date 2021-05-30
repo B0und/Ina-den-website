@@ -69,22 +69,21 @@ input[type="submit"] {
   margin-bottom: 1rem;
 }
 
-.socials-container {
+.socials-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* margin-bottom: 1rem 0; */
   gap: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid black;
 }
 
-.socials-container *:before {
+.socials-content *:before {
   background-color: rgb(71, 71, 71);
 }
 
-.socials-container p,
-.socials-container a {
+.socials-content p,
+.socials-content a {
   margin: 0;
   color: black;
 }
