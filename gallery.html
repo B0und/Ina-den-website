@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ina-Den`s website</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="gallery.css" />
+
+    <!-- navbar load script -->
+    <script>
+      $(function () {
+        $("#nav").load("nav.html");
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="nav" id="nav"></nav>
+
+    <h1>Full Piece</h1>
+    <div class="picture-grid">
+        <div class="grid-box"><img src="assets/full_piece/piece1.jpg" alt=""></div>
+        <div class="grid-box"><img src="assets/full_piece/piece2.jpg" alt=""></div>
+        <div class="grid-box"><img src="assets/full_piece/piece3.jpg" alt=""></div>
+        <div class="grid-box"><img src="assets/full_piece/piece4.jpg" alt=""></div>
+        <div class="grid-box"><img src="assets/full_piece/piece5.jpg" alt=""></div>
+        <div class="grid-box"><img src="assets/full_piece/piece6.jpg" alt=""></div>
+    </div>
+  </body>
+
+  <!-- navbar show script -->
+  <script>
+    $(function () {
+      $("#nav").click(function () {
+        $("#nav__links").toggleClass("show");
+      });
+    });
+  </script>
+</html>
