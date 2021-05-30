@@ -15,6 +15,7 @@
     <script>
       $(function () {
         $("#nav").load("nav.html");
+        $("#footer").load("footer.html");
       });
     </script>
 
@@ -30,39 +31,45 @@
     <nav class="nav" id="nav"></nav>
 
     <!-- Main content -->
+    <div class="hero-section">
+      <form
+        class="contact"
+        action="https://app.99inbound.com/api/e/123456"
+        method="POST"
+        target="_blank"
+        id="contact-form"
+      >
+        <h2>Get in touch</h2>
+        <label for="name-input">Name</label>
+        <input
+          type="text"
+          id="name-input"
+          name="name"
+          placeholder="John"
+          required
+        />
 
-    <form
-      class="contact"
-      action="https://app.99inbound.com/api/e/123456"
-      method="POST"
-      target="_blank"
-      id="contact-form"
-    >
-      <h2>Get in touch</h2>
-      <label for="name-input">Name</label>
-      <input
-        type="text"
-        id="name-input"
-        name="name"
-        placeholder="John"
-        required
-      />
+        <label for="subject-input">Subject</label>
+        <input
+          type="text"
+          id="subject-input"
+          name="subject"
+          placeholder="Comission"
+          required
+        />
 
-      <label for="subject-input">Subject</label>
-      <input
-        type="text"
-        id="subject-input"
-        name="subject"
-        placeholder="Comission"
-        required
-      />
+        <label for="message-input">Message</label>
+        <textarea
+          id="message-input"
+          name="message"
+          placeholder="Text"
+        ></textarea>
 
-      <label for="message-input">Message</label>
-      <textarea id="message-input" name="message" placeholder="Text"></textarea>
-
-      <input class="btn btn-primary" type="submit" value="Submit" />
-    </form>
-    <!-- </div> -->
+        <input class="btn btn-primary" type="submit" value="Submit" />
+      </form>
+      <img src="assets/full_piece/piece3.jpg" alt="" />
+    </div>
+    <footer class="footer" id="footer"></footer>
   </body>
 
   <!-- navbar show script -->

@@ -5,7 +5,6 @@ body {
   align-items: center;
 }
 
-
 .contact {
   align-self: flex-start;
   display: flex;
@@ -35,7 +34,7 @@ body {
 
 #message-input {
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   min-height: 150px;
   font-size: 0.8rem;
   margin-bottom: 1rem;
@@ -57,4 +56,11 @@ input[type="submit"] {
 
 #captchaInput {
   margin-bottom: 1rem;
+  width: 10ch;
 }
+
+.hero-section {
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+}
+

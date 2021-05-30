@@ -33,8 +33,13 @@ button {
   cursor: pointer;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
-  display: block;
+  /* display: block; */
   font-family: var(--main-ff);
   max-width: min(90%, 950px);
   min-width: 387px;
@@ -236,7 +241,8 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 2rem;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
   text-align: center;
 }
 /* 
@@ -313,7 +319,7 @@ nav {
 
   .card:hover {
     transform: scale(1.25);
-    transition: all 0.2s ease;
+    transition: all 0.25s ease-in-out;
     z-index: 1;
   }
 
@@ -322,3 +328,47 @@ nav {
     opacity: 1;
   }
 }
+
+.footer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: rgb(0, 0, 0);
+  color: var(--p-main-clr);
+  text-align: left;
+  font-size: 1rem;
+}
+
+.discord-link:before {
+  display: inline-block;
+  content: "";
+  mask: url("assets/discord.svg");
+  background-color: rgb(139, 139, 139);
+  mask-repeat: no-repeat;
+  background-size: 1.25rem 1.25rem;
+  height: 1.25rem;
+  width: 1.25rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.twitter-link:before {
+  display: inline-block;
+  content: "";
+  mask: url("assets/twitter.svg");
+  background-color: rgb(139, 139, 139);
+  mask-repeat: no-repeat;
+  background-size: 1.25rem 1.25rem;
+  height: 1.25rem;
+  width: 1.25rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
