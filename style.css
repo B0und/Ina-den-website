@@ -42,10 +42,10 @@ body {
   /* display: block; */
   font-family: var(--main-ff);
   max-width: min(90%, 950px);
-  min-width: 387px;
-  min-height: 100vh;
+  min-width: 300px;
+  min-height: 100vh;  
   margin: 0 auto;
-  /* display: flex; */
+
   background: linear-gradient(
     180deg,
     var(--gradient-start-clr) 0 50vh,
