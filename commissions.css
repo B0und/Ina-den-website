@@ -34,15 +34,37 @@ body h2 {
   color: white;
 }
 
+.commissions-container {
+  align-items: flex-start;
+  text-align: left;
+}
+
 .card-wrapper {
+  width: 100%;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(minmax(200px, 350px), minmax(0, 1fr))
+  );
+
+  justify-items: start;
+  align-items: stretch;
+  /* align-items: baseline; */
+
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .card {
+  /* flex: 1 1 auto; */
   text-align: center;
   background-color: #98ead3;
-  flex: 1 1 auto;
+  min-width: 250px;
+  max-width: 250px;
+}
+
+.last-card {
+  min-width: 350px;
+  max-width: 350px;
 }
 
 .card h3 {
@@ -52,6 +74,7 @@ body h2 {
 }
 
 .card img {
+  display: block;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
@@ -63,10 +86,9 @@ body h2 {
   color: black;
 }
 
-@media screen and (min-width: 769px) {
-  .card {
-    min-width: 200px;
-    max-width: 300px;
+@media screen and (max-width: 769px) {
+  .card-wrapper {
+    justify-items: center;
   }
 }
 

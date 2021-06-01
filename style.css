@@ -16,8 +16,8 @@
 }
 
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -39,15 +39,14 @@ html {
 }
 
 body {
-  /* display: block; */
   font-family: var(--main-ff);
-  max-width: min(90%, 950px);
+  max-width: min(90%, 1200px);
   min-width: 300px;
-  min-height: 100vh;  
+  min-height: 100vh;
   margin: 0 auto;
 
   background: linear-gradient(
-    180deg,
+    to bottom,
     var(--gradient-start-clr) 0 50vh,
     var(--gradient-end-clr) 80vh 100vh
   );
@@ -94,7 +93,9 @@ nav {
   display: none;
   padding: 1rem 1rem;
   border-radius: 0;
-  mask: url("assets/menu.svg");
+  -webkit-mask: url("assets/menu.svg") no-repeat;
+  mask: url("assets/menu.svg") no-repeat;
+
   background-repeat: no-repeat;
   background-color: inherit;
   background-size: contain;
@@ -128,6 +129,7 @@ nav {
     display: inline-block;
     background: var(--secondary-black-clr);
     mask-size: cover;
+    -webkit-mask-size: cover;
   }
 
   .show {
@@ -152,6 +154,7 @@ nav {
   display: flex;
   flex-direction: column;
   flex: 1 1 0;
+  min-width: 0;
 }
 
 .hero-section h1 {
@@ -204,6 +207,7 @@ nav {
 }
 
 .btn-secondary:hover {
+  -webkit-filter: brightness(90%);
   filter: brightness(90%);
 }
 
@@ -213,12 +217,14 @@ nav {
 }
 
 .btn-primary:hover {
+  -webkit-filter: brightness(90%);
   filter: brightness(90%);
 }
 
 .hero-section img {
   flex: 1 1 0;
   width: 100%;
+  min-width: 0;
   border-radius: 17px;
   box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 2px -2px rgba(0, 0, 0, 0.05);
@@ -245,20 +251,21 @@ nav {
   margin-top: 2rem;
   margin-bottom: 8rem;
   text-align: center;
+  height: 100%;
+  flex-wrap: wrap;
 }
-/* 
-.portfolio > * {
-  width: 100%;
-} */
+
 
 .card-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  width: 80%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  /* grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); */
+
+  gap: 2rem;
+  row-gap: 4rem;
 }
 
 .card {
@@ -266,14 +273,22 @@ nav {
   border-radius: 30px;
   box-shadow: 10px 15px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 4px 6px -2px rgba(0, 0, 0, 0.05);
-  flex: 1 1 0px;
+  /* flex: 1 1 0px; */
   /* min-width: min(300px, 100%);
   max-width: min(300px, 33%); */
 
-  min-width: 300px;
-  max-width: 350px;
+  min-width: 250px;
+  max-width: 250px;
 
   /* min-width: 300px; */
+}
+
+.card img {
+  width: 100%;
+  height: 275px;
+  border-radius: 30px;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .card-text {
@@ -300,18 +315,11 @@ nav {
   font-weight: 400;
 }
 
-.card img {
-  border-radius: 30px;
-  object-fit: cover;
-  width: 100%;
-  height: 200px;
-}
-
 @media screen and (min-width: 769px) {
-  .card {
+  /* .card {
     min-width: 250px;
     max-width: 250px;
-  }
+  } */
   .card-text {
     visibility: hidden;
     opacity: 0;
@@ -319,7 +327,7 @@ nav {
   }
 
   .card:hover {
-    transform: scale(1.25);
+    transform: scale(1.2);
     transition: all 0.25s ease-in-out;
     z-index: 1;
   }
@@ -356,8 +364,10 @@ nav {
 .discord-link:before {
   display: inline-block;
   content: "";
+  -webkit-mask: url("assets/discord.svg");
   mask: url("assets/discord.svg");
   background-color: rgb(139, 139, 139);
+  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   background-size: 1.25rem 1.25rem;
   height: 1.25rem;
@@ -369,8 +379,10 @@ nav {
 .twitter-link:before {
   display: inline-block;
   content: "";
+  -webkit-mask: url("assets/twitter.svg");
   mask: url("assets/twitter.svg");
   background-color: rgb(139, 139, 139);
+  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   background-size: 1.25rem 1.25rem;
   height: 1.25rem;
@@ -395,6 +407,7 @@ nav {
   position: fixed;
   /* preferred positioning, requires prefixing for most support, and not supported on Safari */
   /* @link https://caniuse.com/#search=position%3A%20sticky */
+  position: -webkit-sticky;
   position: sticky;
   /* reinstate clicks */
   pointer-events: all;
