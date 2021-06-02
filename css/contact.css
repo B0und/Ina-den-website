@@ -144,8 +144,8 @@ input {
   min-height: 150px;
   font-size: 1rem;
   margin-bottom: 1rem;
-  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  resize: vertical;
+  box-sizing: border-box;
 }
 
 input[type="submit"] {
@@ -198,7 +198,3 @@ input[type="submit"] {
   color: rgb(0, 0, 0);
   font-size: 1.4rem;
 }
-
-/* .twitter-link a {
-  color: var(--primary-clr);
-} */
