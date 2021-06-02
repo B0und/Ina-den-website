@@ -1,18 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;800&display=swap");
 
 :root {
-  --secondary-black-clr: #5a5a5a;
-  --p-main-clr: #4b5563;
+  --p-main-clr: #cfcfcf;
   --accent-clr: #49959b;
-  --primary-clr: #b2384c;
-  --secondary-clr: #53aaaf;
-  --main-ff: "Mulish", sans-serif;
+  --primary-clr: #e3a008;
+  --secondary-black-clr: #5a5a5a;
   --gradient-start-clr: #fccfb1;
   --gradient-end-clr: #047481;
-  --darker-gradient-start-clr: #ff934a;
   --card-text--clr: #c7c7c7;
-  --hamburger-light-clr: rgb(214, 214, 214);
+  --hamburger-light-clr: rgb(161, 161, 161);
   --footer-text-clr: rgb(180, 180, 180);
+  --main-ff: "Mulish", sans-serif;
 }
 
 *,
@@ -40,17 +38,8 @@ html {
 
 body {
   font-family: var(--main-ff);
-  max-width: min(90%, 1200px);
-  min-width: 300px;
-  min-height: 100vh;
-  margin: 0 auto;
-
-  background: linear-gradient(
-    to bottom,
-    var(--gradient-start-clr) 0 50vh,
-    var(--gradient-end-clr) 80vh 100vh
-  );
-  background-repeat: no-repeat;
+  margin: 0;
+  color: white;
 }
 
 img {
@@ -58,7 +47,12 @@ img {
 }
 
 /* Navbar */
-
+.abs-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -81,23 +75,22 @@ nav {
 
 .nav__links li a {
   transition: all 0.3s ease 0s;
-  color: black;
+  color: white;
 }
 
 .nav__links li a:hover,
 .nav__links li a:focus {
-  color: rgb(130, 130, 131);
+  color: var(--primary-clr);
 }
 
 .hamburger {
   display: none;
-  padding: 1rem 1rem;
+  padding: 1.25rem;
   border-radius: 0;
-  -webkit-mask: url("assets/menu.svg") no-repeat;
-  mask: url("assets/menu.svg") no-repeat;
+  -webkit-mask: url("../assets/menu.svg") no-repeat;
+  mask: url("../assets/menu.svg") no-repeat;
 
   background-repeat: no-repeat;
-  background-color: inherit;
   background-size: contain;
   margin-left: auto;
   align-self: flex-end;
@@ -105,14 +98,11 @@ nav {
 
 @media screen and (max-width: 769px) {
   /* hide old nav, show hamburger */
-  nav {
-    padding: 2rem 10%;
-    /* padding-top: 1rem; */
-  }
   .nav__links {
     display: none;
     flex-direction: column;
     width: 100%;
+    background-color: black;
   }
 
   .show li {
@@ -127,14 +117,14 @@ nav {
 
   .hamburger {
     display: inline-block;
-    background: var(--secondary-black-clr);
+    background: var(--hamburger-light-clr);
     mask-size: cover;
     -webkit-mask-size: cover;
+    margin-right: 3rem;
   }
 
   .show {
     display: flex;
-    /* justify-content: space-evenly; */
     align-items: center;
     flex-wrap: wrap;
   }
@@ -143,58 +133,63 @@ nav {
 /* hero section */
 
 .hero-section {
-  margin: 0 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   gap: 2rem;
+
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../assets/hero.jpg") no-repeat;
+
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 10%;
 }
 
 .hero-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 0;
-  min-width: 0;
+  margin-left: 10%;
 }
-
 .hero-section h1 {
-  display: inline-block;
+  display: block;
   font-size: 4rem;
-  font-size: clamp(4rem, 9vw, 6rem);
-
+  font-size: clamp(4rem, 9vw, 7.5rem);
   font-weight: 800;
-  line-height: clamp(4.5rem, 9vw, 6.5rem);
+  color: var(--primary-clr);
 }
 
 .hero-section h2 {
-  display: inline-block;
+  display: block;
   font-size: 1.1rem;
-  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  font-size: clamp(1.1rem, 3vw, 2rem);
   font-weight: 300;
   /* match to the beginning of h1 */
   margin-left: 4px;
-  margin-top: -1rem;
+  margin-top: -0.8em;
 }
 
 .hero-section p {
-  margin: 2rem 0;
+  margin: 2.5rem 0;
+  color: var(--p-main-clr);
+  max-width: 30ch;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   /* match to the beginning of h1 */
   margin-left: 6px;
   line-height: 1.5;
-  color: var(--p-main-clr);
-  max-width: 35ch;
 }
 
 .btn-container {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 3rem;
+  gap: clamp(1rem, 4vw, 3rem);
 }
 
 .btn {
   padding: 1rem 1.5rem;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   color: white;
   white-space: nowrap;
   box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.1);
@@ -212,8 +207,8 @@ nav {
 }
 
 .btn-primary {
-  margin-left: 2rem;
   background-color: var(--primary-clr);
+  color: black;
 }
 
 .btn-primary:hover {
@@ -221,40 +216,24 @@ nav {
   filter: brightness(90%);
 }
 
-.hero-section img {
-  flex: 1 1 0;
-  width: 100%;
-  min-width: 0;
-  border-radius: 17px;
-  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 2px 2px -2px rgba(0, 0, 0, 0.05);
-}
-
-@media screen and (min-width: 769px) {
-  .hero-section {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .hero-section {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
-  }
-}
 /* Portfolio section */
 
+.portfolio-wrapper {
+  background-color: var(--accent-clr);
+}
 .portfolio {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 8rem;
+  padding-bottom: 8rem;
   text-align: center;
   height: 100%;
   flex-wrap: wrap;
-}
 
+  max-width: min(90%, 1200px);
+  margin: 0 auto;
+}
 
 .card-wrapper {
   width: 80%;
@@ -262,8 +241,6 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-items: center;
-  /* grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); */
-
   gap: 2rem;
   row-gap: 4rem;
 }
@@ -273,14 +250,9 @@ nav {
   border-radius: 30px;
   box-shadow: 10px 15px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 4px 6px -2px rgba(0, 0, 0, 0.05);
-  /* flex: 1 1 0px; */
-  /* min-width: min(300px, 100%);
-  max-width: min(300px, 33%); */
 
   min-width: 250px;
   max-width: 250px;
-
-  /* min-width: 300px; */
 }
 
 .card img {
@@ -316,10 +288,6 @@ nav {
 }
 
 @media screen and (min-width: 769px) {
-  /* .card {
-    min-width: 250px;
-    max-width: 250px;
-  } */
   .card-text {
     visibility: hidden;
     opacity: 0;
@@ -364,8 +332,8 @@ nav {
 .discord-link:before {
   display: inline-block;
   content: "";
-  -webkit-mask: url("assets/discord.svg");
-  mask: url("assets/discord.svg");
+  -webkit-mask: url("../assets/discord.svg");
+  mask: url("../assets/discord.svg");
   background-color: rgb(139, 139, 139);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
@@ -379,8 +347,8 @@ nav {
 .twitter-link:before {
   display: inline-block;
   content: "";
-  -webkit-mask: url("assets/twitter.svg");
-  mask: url("assets/twitter.svg");
+  -webkit-mask: url("../assets/twitter.svg");
+  mask: url("../assets/twitter.svg");
   background-color: rgb(139, 139, 139);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
@@ -405,47 +373,26 @@ nav {
 .back-to-top-link {
   /* `fixed` is fallback when `sticky` not supported */
   position: fixed;
-  /* preferred positioning, requires prefixing for most support, and not supported on Safari */
-  /* @link https://caniuse.com/#search=position%3A%20sticky */
   position: -webkit-sticky;
   position: sticky;
-  /* reinstate clicks */
   pointer-events: all;
-  /* achieves desired positioning within the viewport */
-  /* relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
-  top: calc(100vh - 5rem);
-
+  top: calc(100vh - 8rem);
   display: inline-block;
   text-decoration: none;
   font-size: 2rem;
-  line-height: 3rem;
   text-align: center;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   background-color: #000000d2;
-  /* emoji don't behave like regular fonts
-     so this helped position it correctly */
-  padding: 0.25rem;
 }
 
 .back-to-top-wrapper {
-  /* uncomment to visualize "track" */
-  /* outline: 1px solid red; */
   position: absolute;
-
-  /* How far of a scroll travel within <main> prior to the
-   link appearing */
-
   top: 100vh;
-  right: 2rem;
-  /* Optional, extends the final link into the */
-  /* footer at the bottom of the page */
-  /* Set to `0` to stop at the end of `main` */
+  right: 2%;
   bottom: -0.01em;
-  /* Required for best support in browsers not supporting `sticky` */
   width: 3em;
-  /* Disable interaction with this element */
   pointer-events: none;
 }
 
@@ -453,10 +400,10 @@ nav {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 18px;
-  height: 18px;
-  margin-left: -9px;
-  margin-top: -5px;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-left: -0.5625rem;
+  margin-top: -0.3125rem;
   cursor: pointer;
 }
 .up:hover polyline,

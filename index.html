@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ina-Den`s website</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <!-- navbar load script -->
+    <!-- navbar/footer load script -->
     <script>
       $(function () {
         $("#nav").load("nav.html");
@@ -16,16 +16,16 @@
       });
     </script>
   </head>
-  <body id="top">
+
+  <body>
     <!-- Navbar -->
-    <nav class="nav" id="nav"></nav>
+    <nav class="nav abs-nav" id="nav"></nav>
 
     <!-- Hero section -->
     <section class="hero-section">
       <div class="hero-wrapper">
         <h1>Ina-Den</h1>
         <h2>Traditional and Digital Artist</h2>
-
         <p>
           I am a very cool dude and this is a short description of who I am and
           what I do. And why Japan is so cool.
@@ -48,77 +48,56 @@
           </button>
         </div>
       </div>
-
-      <img src="assets/hero.jpg" alt="Cute anime girl" />
     </section>
 
     <!-- Portfolio/Specialties Section -->
-    <section class="portfolio">
-      <h2>Specialties</h2>
+    <div class="portfolio-wrapper">
+      <section class="portfolio">
+        <h2>Specialties</h2>
 
-      <div class="card-wrapper">
-        <div class="card">
-          <a href="gallery.html"
-            ><img src="assets/profile_picture/pfp1.jpg" alt="anime girl"
-          /></a>
-          <div class="card-text">Anime</div>
+        <div class="card-wrapper">
+          <div class="card">
+            <a href="gallery.html"
+              ><img src="../assets/profile_picture/pfp1.jpg" alt="anime girl" />
+              <div class="card-text">Anime</div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="gallery.html"
+              ><img src="../assets/paint/painting1.jpg" alt="oil painting" />
+              <div class="card-text">Oil Paint Style</div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="gallery.html"
+              ><img src="../assets/other/other1.jpg" alt="monster" />
+              <div class="card-text">Monsters</div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="gallery.html"
+              ><img src="../assets/other/mech.jpg" alt="mech" />
+              <div class="card-text">Mechs</div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="gallery.html"
+              ><img src="../assets/other/other3.jpg" alt="line art" />
+              <div class="card-text">Line Style</div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="gallery.html"
+              ><img src="../assets/half_full_body/body7.jpg" alt="meme" />
+              <div class="card-text">Memes</div>
+            </a>
+          </div>
         </div>
-        <div class="card">
-          <a href="gallery.html"
-            ><img src="assets/paint/painting1.jpg" alt="oil painting"
-          /></a>
-          <div class="card-text">Oil Paint Style</div>
-        </div>
-        <div class="card">
-          <a href="gallery.html"
-            ><img src="assets/other/other1.jpg" alt="monster"
-          /></a>
-          <div class="card-text">Monsters</div>
-        </div>
-        <div class="card">
-          <a href="gallery.html"><img src="assets/mech.jpg" alt="mech" /></a>
-          <div class="card-text">Mechs</div>
-        </div>
-        <div class="card">
-          <a href="gallery.html"
-            ><img src="assets/other/other3.jpg" alt="line art"
-          /></a>
-          <div class="card-text">Lines</div>
-        </div>
-        <div class="card">
-          <a href="gallery.html"
-            ><img src="assets/half_full_body/body7.jpg" alt="meme"
-          /></a>
-          <div class="card-text">Memes</div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer" id="footer"></footer>
-
-    <!-- Back to Top link -->
-    <div class="back-to-top-wrapper">
-      <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">
-        <svg
-          class="arrow up"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="5 0 50 80"
-          xml:space="preserve"
-        >
-          <polyline
-            fill="none"
-            stroke="#FFFFFF"
-            stroke-width="8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            points="
-      0.375, 35.375 28.375, 0.375 58.67, 35.375 "
-          />
-        </svg>
-      </a>
-    </div>
   </body>
 
   <!-- navbar show script -->
@@ -129,19 +108,4 @@
       });
     });
   </script>
-  <!-- <script>
-    $(function () {
-      $("#nav").click(function () {
-        $("#nav__links").toggleClass("show").animate(1000);
-      });
-    });
-  </script> -->
-  <!-- 
-  <script>
-    $(function () {
-      $("#nav").click(function () {
-        $("#nav__links").slideToggle("show", "linear");
-      });
-    });
-  </script> -->
 </html>
