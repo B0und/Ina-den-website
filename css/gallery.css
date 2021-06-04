@@ -45,9 +45,9 @@ body h1 {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: 50% 50%;
-     object-position: 50% 50%;
+  object-position: 50% 50%;
   transition: 0.25s ease-in-out;
 }
 .gallery-item:hover .image img {
@@ -90,6 +90,12 @@ body h1 {
 }
 .h-6 {
   grid-row: span 6;
+}
+.h-7 {
+  grid-row: span 7;
+}
+.h-8 {
+  grid-row: span 8;
 }
 
 @media screen and (max-width: 500px) {
