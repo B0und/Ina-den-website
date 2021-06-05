@@ -288,6 +288,10 @@ nav {
   font-weight: 400;
 }
 
+.card div {
+  transition: all 0.25s linear;
+}
+
 @media screen and (min-width: 769px) {
   .card-text {
     visibility: hidden;
