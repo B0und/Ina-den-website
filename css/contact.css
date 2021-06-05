@@ -148,7 +148,7 @@ input {
   box-sizing: border-box;
 }
 
-input[type="button"] {
+input[type="submit"] {
   border: none;
   width: 40%;
   margin-left: 0;
@@ -166,9 +166,7 @@ input[type="button"] {
 
 #captchaInput {
   margin-bottom: 1rem;
-  width: 15ch;
-  width: 10em;
-  margin-left: 0.5em;
+  width: 10ch;
 }
 
 .contact-section {
