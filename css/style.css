@@ -348,6 +348,8 @@ nav {
 .twitter-link:before {
   -webkit-mask: url("../assets/twitter.svg");
   mask: url("../assets/twitter.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 /* Scroll to top button */
