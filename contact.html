@@ -65,7 +65,10 @@
 
         <h2>Get in touch</h2>
         <div class="socials-container local-socials">
-          <p class="discord-link">Ina Den #1062</p>
+          <div class="popup">
+            <p class="discord-link" id="discord-link">Ina Den #1062</p>
+            <span class="popuptext" id="myPopup">Copied!</span>
+          </div>
           <a
             class="twitter-link"
             href="https://twitter.com/Ina_den_"
@@ -116,6 +119,49 @@
     $(function () {
       $("#nav").click(function () {
         $("#nav__links").toggleClass("show");
+      });
+    });
+  </script>
+
+  <!-- i hate javascript sometimes -->
+  <script>
+    function copyToClipboard(text) {
+      var selected = false;
+      var el = document.createElement("textarea");
+      el.value = text;
+      el.setAttribute("readonly", "");
+      el.style.position = "absolute";
+      el.style.left = "-9999px";
+      document.body.appendChild(el);
+      if (document.getSelection().rangeCount > 0) {
+        selected = document.getSelection().getRangeAt(0);
+      }
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+      if (selected) {
+        document.getSelection().removeAllRanges();
+        document.getSelection().addRange(selected);
+      }
+    }
+
+    document
+      .getElementById("discord-link")
+      .addEventListener("click", function () {
+        copyToClipboard("Ina Den #1062");
+      });
+  </script>
+
+  <!-- show notification popup script -->
+  <script>
+    $(function () {
+      $("#discord-link").click(function () {
+        $("#myPopup")
+          .addClass("show-popup")
+          .delay(1500)
+          .queue(function () {
+            $(this).removeClass("show-popup").dequeue();
+          });
       });
     });
   </script>
