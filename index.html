@@ -6,15 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ina-Den`s website</title>
     <link rel="stylesheet" href="css/style.css" />
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <!-- navbar/footer load script -->
-    <script>
-      $(function () {
-        $("#nav").load("nav.html");
-        $("#footer").load("footer.html");
-      });
-    </script>
   </head>
 
   <body>
@@ -98,14 +90,10 @@
 
     <!-- Footer -->
     <footer class="footer" id="footer"></footer>
-  </body>
 
-  <!-- navbar show script -->
-  <script>
-    $(function () {
-      $("#nav").click(function () {
-        $("#nav__links").toggleClass("show");
-      });
-    });
-  </script>
+    <script src="js/load_nav_footer.js"></script>
+    <script src="js/toggle_navbar.js"></script>
+    <script src="js/clipboard_copy.js"></script>
+    <script src="js/notification_press.js"></script>
+  </body>
 </html>

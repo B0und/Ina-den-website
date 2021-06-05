@@ -8,14 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/gallery.css" />
-
-    <!-- navbar load script -->
-    <script>
-      $(function () {
-        $("#nav").load("nav.html");
-        $("#footer").load("footer.html");
-      });
-    </script>
   </head>
   <body id="top">
     <!-- Navbar -->
@@ -251,7 +243,11 @@
 
       <div class="gallery-item w-4 h-2">
         <div class="image">
-          <img src="assets/other/other3.jpg" loading="lazy" alt="cool line art" />
+          <img
+            src="assets/other/other3.jpg"
+            loading="lazy"
+            alt="cool line art"
+          />
         </div>
       </div>
     </div>
@@ -280,14 +276,9 @@
         </svg>
       </a>
     </div>
+    <script src="js/load_nav_footer.js"></script>
+    <script src="js/toggle_navbar.js"></script>
+    <script src="js/clipboard_copy.js"></script>
+    <script src="js/notification_press.js"></script>
   </body>
-
-  <!-- navbar show script -->
-  <script>
-    $(function () {
-      $("#nav").click(function () {
-        $("#nav__links").toggleClass("show");
-      });
-    });
-  </script>
 </html>

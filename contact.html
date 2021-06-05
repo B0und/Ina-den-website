@@ -9,35 +9,16 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="js/jquery.captcha.basic.min.js"></script>
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/contact.css" />
-    <!-- navbar load script -->
-    <script>
-      $(function () {
-        $("#nav").load("nav.html");
-        $("#footer").load("footer.html");
-      });
-    </script>
-
     <script type="text/javascript">
       $(document).ready(function () {
         $("#contact-form").captcha();
       });
     </script>
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
 
-    <!-- form reset script -->
-    <script>
-      function submitForm() {
-        // Get the first form with the name
-        // Usually the form name is not repeated
-        // but duplicate names are possible in HTML
-        // Therefore to work around the issue, enforce the correct index
-        var frm = document.getElementById("contact-form");
-        frm.submit(); // Submit the form
-        frm.reset(); // Reset all form data
-        return false; // Prevent page refresh
-      }
-    </script>
+    <script src="js/load_nav_footer.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -112,57 +93,19 @@
       <img src="assets/full_piece/piece3.jpg" alt="" />
     </div>
     <footer class="footer" id="footer"></footer>
+
+    <!-- form reset script -->
+    <script>
+      function submitForm() {
+        var form = document.getElementById("contact-form");
+        form.submit(); // Submit the form
+        form.reset(); // Reset all form data
+        return false; // Prevent page refresh
+      }
+    </script>
+
+    <script src="js/toggle_navbar.js"></script>
+    <script src="js/clipboard_copy.js"></script>
+    <script src="js/notification_press.js"></script>
   </body>
-
-  <!-- navbar show script -->
-  <script>
-    $(function () {
-      $("#nav").click(function () {
-        $("#nav__links").toggleClass("show");
-      });
-    });
-  </script>
-
-  <!-- i hate javascript sometimes -->
-  <script>
-    function copyToClipboard(text) {
-      var selected = false;
-      var el = document.createElement("textarea");
-      el.value = text;
-      el.setAttribute("readonly", "");
-      el.style.position = "absolute";
-      el.style.left = "-9999px";
-      document.body.appendChild(el);
-      if (document.getSelection().rangeCount > 0) {
-        selected = document.getSelection().getRangeAt(0);
-      }
-      el.select();
-      document.execCommand("copy");
-      document.body.removeChild(el);
-      if (selected) {
-        document.getSelection().removeAllRanges();
-        document.getSelection().addRange(selected);
-      }
-    }
-
-    document
-      .getElementById("discord-link")
-      .addEventListener("click", function () {
-        copyToClipboard("Ina Den #1062");
-      });
-  </script>
-
-  <!-- show notification popup script -->
-  <script>
-    $(function () {
-      $("#discord-link").click(function () {
-        $("#myPopup")
-          .addClass("show-popup")
-          .delay(1500)
-          .queue(function () {
-            $(this).removeClass("show-popup").dequeue();
-          });
-      });
-    });
-  </script>
 </html>

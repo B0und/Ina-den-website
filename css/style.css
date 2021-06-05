@@ -329,7 +329,8 @@ nav {
   color: var(--gradient-start-clr);
 }
 
-.discord-link:before {
+.discord-link:before,
+.twitter-link:before {
   display: inline-block;
   content: "";
   -webkit-mask: url("../assets/discord.svg");
@@ -345,18 +346,8 @@ nav {
 }
 
 .twitter-link:before {
-  display: inline-block;
-  content: "";
   -webkit-mask: url("../assets/twitter.svg");
   mask: url("../assets/twitter.svg");
-  background-color: rgb(139, 139, 139);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  background-size: 1.25rem 1.25rem;
-  height: 1.25rem;
-  width: 1.25rem;
-  vertical-align: middle;
-  margin-right: 0.5rem;
 }
 
 /* Scroll to top button */
@@ -414,4 +405,68 @@ nav {
 .up:active polyline {
   stroke-width: 12;
   transition: all 100ms ease-in-out;
+}
+
+/* popup notification */
+
+/* Popup container */
+.popup {
+  position: relative;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show-popup {
+  visibility: visible;
+  animation: popup-animation 0.25s;
+  -webkit-animation: popup-animation 0.25s;
+  /* animation-iteration-count: 1; */
+  /* animation-direction: alternate; */
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes popup-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes popup-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
