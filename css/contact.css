@@ -148,7 +148,7 @@ input {
   box-sizing: border-box;
 }
 
-input[type="submit"] {
+input[type="button"] {
   border: none;
   width: 40%;
   margin-left: 0;
